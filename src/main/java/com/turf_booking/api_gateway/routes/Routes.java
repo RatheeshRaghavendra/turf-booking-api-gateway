@@ -11,11 +11,21 @@ public class Routes {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("bookings-eapi",r -> r.path("/question/**").uri("lb://BOOKINGS-EAPI"))
-                .route("bookings-papi",r -> r.path("/api/turf-booking/**").uri("lb://BOOKINGS-PAPI"))
-                .route("booking-sapi",r -> r.path("/booking-sapi/**").uri("lb://BOOKING-SAPI"))
-                .route("turf-sapi",r -> r.path("/turf-sapi/**").uri("lb://TURF-SAPI"))
-                .route("user-sapi",r -> r.path("/user-sapi/**").uri("lb://USER-SAPI"))
+                .route("bookings-eapi",
+                        r -> r.path("/question/**")
+                                .uri("lb://BOOKINGS-EAPI"))
+                .route("bookings-papi",
+                        r -> r.path("/api/turf-booking/**")
+                                .uri("lb://BOOKINGS-PAPI"))
+                .route("booking-sapi",
+                        r -> r.path("/booking-sapi/**")
+                                .uri("lb://BOOKING-SAPI"))
+                .route("turf-sapi",
+                        r -> r.path("/turf-sapi/**")
+                                .uri("lb://TURF-SAPI"))
+                .route("user-sapi",
+                        r -> r.path("/user-sapi/**")
+                                .uri("lb://USER-SAPI"))
                 .build();
 
     }
